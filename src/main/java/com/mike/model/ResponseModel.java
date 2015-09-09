@@ -10,12 +10,14 @@ public class ResponseModel {
     private String method;
     private String authType;
     private String requestUrl;
+    private String name;
 
-    public ResponseModel(HttpServletRequest request){
+    public ResponseModel(String name, HttpServletRequest request){
 
         this.method = request.getMethod();
         this.authType = request.getAuthType();
         this.requestUrl = request.getRequestURL().toString();
+        this.name = name;
     }
 
     public String getMethod() {
@@ -40,5 +42,13 @@ public class ResponseModel {
 
     public void setRequestUrl(String requestUrl) {
         this.requestUrl = requestUrl;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
