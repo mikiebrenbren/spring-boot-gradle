@@ -20,7 +20,6 @@ public class Hello {
 
     @RequestMapping("hello/{name}")
     public ResponseEntity<ResponseModel> helloWorld(HttpServletRequest request, HttpServletResponse response, @PathVariable final String name){
-
         return new ResponseEntity<>(new ResponseModel(name, request), HttpStatus.OK);
     }
 }

@@ -3,7 +3,7 @@ package com.mike.model;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created by michaelbrennan on 9/8/15.
+ * Created by Michael Brennan on 9/8/15.
  */
 public class ResponseModel {
 
