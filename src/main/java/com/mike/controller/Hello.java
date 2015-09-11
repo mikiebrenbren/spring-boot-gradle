@@ -1,6 +1,8 @@
 package com.mike.controller;
 
 import com.mike.model.ResponseModel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,9 +19,11 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping("/")
 public class Hello {
 
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @RequestMapping("hello/{name}")
     public ResponseEntity<ResponseModel> helloWorld(HttpServletRequest request, HttpServletResponse response, @PathVariable final String name){
+        logger.debug("This is the name: " + name);
         return new ResponseEntity<>(new ResponseModel(name, request), HttpStatus.OK);
     }
 }
