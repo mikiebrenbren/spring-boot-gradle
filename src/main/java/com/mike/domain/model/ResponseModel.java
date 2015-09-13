@@ -1,4 +1,4 @@
-package com.mike.model;
+package com.mike.domain.model;
 
 import javax.servlet.http.HttpServletRequest;
 
