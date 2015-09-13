@@ -1,6 +1,6 @@
 package com.mike.controller;
 
-import com.mike.model.ResponseModel;
+import com.mike.domain.model.ResponseModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
