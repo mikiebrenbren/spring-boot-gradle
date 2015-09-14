@@ -1,16 +1,19 @@
 package com.mike.controller;
 
 import com.mike.domain.model.ResponseModel;
+import com.mike.exception.ExceptionClass;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * Created by Michael Brennan on 9/8/15.
@@ -24,6 +27,16 @@ public class Hello {
     @RequestMapping("hello/{name}")
     public ResponseEntity<ResponseModel> helloWorld(HttpServletRequest request, HttpServletResponse response, @PathVariable final String name){
         logger.debug("This is the name: " + name);
+        if(name == null){
+            throw new ExceptionClass();
+        }
         return new ResponseEntity<>(new ResponseModel(name, request), HttpStatus.OK);
+    }
+
+    @ExceptionHandler(ExceptionClass.class)
+    public void myError(HttpServletRequest request, HttpServletResponse response, Exception exception) throws IOException {
+
+                response.sendError(HttpStatus.BAD_REQUEST.value(), "Resource not found, invalid ID");
+
     }
 }
