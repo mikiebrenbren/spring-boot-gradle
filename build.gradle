@@ -6,7 +6,7 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
 
-//todo war file creation functionality
+// war file creation functionality
 apply plugin: 'war'
 war {
     baseName = 'myapp'
@@ -19,7 +19,7 @@ targetCompatibility = 1.8
 repositories {
     mavenCentral()
     jcenter()
-    maven { url "http://repo.spring.io/libs-snapshot" } //todo war file creation functionality
+    maven { url "http://repo.spring.io/libs-snapshot" } //war file creation functionality
 }
 
 buildscript {
@@ -43,7 +43,7 @@ dependencies {
 
     //SPRING BOOT
     compile('org.springframework.boot:spring-boot-starter-web:1.2.6.RELEASE')
-    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat") //todo war file creation functionality
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat") // war file creation functionality
     // tag::actuator[]
     compile('org.springframework.boot:spring-boot-starter-actuator:1.2.6.RELEASE')
     // end::actuator[]
@@ -55,6 +55,14 @@ dependencies {
 
     //ASSORTED DEPENDENCIES
     compile "org.apache.commons:commons-lang3:3.4"
+
+    //Spring Security
+    //more info can be found here http://docs.spring.io/spring-security/site/docs/3.2.x/guides/helloworld.html
+    compile 'org.springframework.security:spring-security-core:4.0.2.RELEASE'
+    compile 'org.springframework.security:spring-security-web:4.0.2.RELEASE'
+    compile 'org.springframework.security:spring-security-config:4.0.2.RELEASE'
+
+
 }
 
 //bootRepackage {

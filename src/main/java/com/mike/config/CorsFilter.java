@@ -1,4 +1,4 @@
-package com.mike;
+package com.mike.config;
 
 import org.springframework.stereotype.Component;
 

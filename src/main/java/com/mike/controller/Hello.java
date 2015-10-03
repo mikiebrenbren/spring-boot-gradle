@@ -2,6 +2,7 @@ package com.mike.controller;
 
 import com.mike.domain.model.ResponseModel;
 import com.mike.exception.ExceptionClass;
+import com.mike.utils.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -24,7 +25,7 @@ public class Hello {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @RequestMapping("hello/{name}")
+    @RequestMapping(Constants.HELLO+"/{name}")
     public ResponseEntity<ResponseModel> helloWorld(HttpServletRequest request, HttpServletResponse response, @PathVariable final String name){
         logger.debug("This is the name: " + name);
         if(name == null){
@@ -33,10 +34,15 @@ public class Hello {
         return new ResponseEntity<>(new ResponseModel(name, request), HttpStatus.OK);
     }
 
+    @RequestMapping(Constants.HELLO)
+    public ResponseEntity<ResponseModel> hello(HttpServletRequest request, HttpServletResponse response){
+        return new ResponseEntity<>(new ResponseModel(Constants.HELLO, request), HttpStatus.OK);
+    }
+
+
+
     @ExceptionHandler(ExceptionClass.class)
     public void myError(HttpServletRequest request, HttpServletResponse response, Exception exception) throws IOException {
-
                 response.sendError(HttpStatus.BAD_REQUEST.value(), "Resource not found, invalid ID");
-
     }
 }
