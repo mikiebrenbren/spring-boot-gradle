@@ -47,6 +47,7 @@ dependencies {
     // tag::actuator[]
     compile('org.springframework.boot:spring-boot-starter-actuator:1.2.6.RELEASE')
     // end::actuator[]
+    compile 'org.springframework.boot:spring-boot-starter-security:1.2.6.RELEASE'
 
     //DATABASE
     compile 'org.springframework.boot:spring-boot-starter-data-jpa:1.2.6.RELEASE'
@@ -56,11 +57,9 @@ dependencies {
     //ASSORTED DEPENDENCIES
     compile "org.apache.commons:commons-lang3:3.4"
 
-    //Spring Security
+    //Security
     //more info can be found here http://docs.spring.io/spring-security/site/docs/3.2.x/guides/helloworld.html
-    compile 'org.springframework.security:spring-security-core:4.0.2.RELEASE'
-    compile 'org.springframework.security:spring-security-web:4.0.2.RELEASE'
-    compile 'org.springframework.security:spring-security-config:4.0.2.RELEASE'
+
 
 
 }

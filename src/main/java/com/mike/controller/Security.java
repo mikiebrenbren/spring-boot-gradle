@@ -15,7 +15,7 @@ import java.io.IOException;
  * Created by michaelbrennan on 10/3/15.
  */
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api/")
 public class Security {
 
     @RequestMapping("logout")

@@ -15,6 +15,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private CustomAuthenticationSuccessHandler successHandler;
+//    @Autowired
+//    private
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
@@ -32,7 +34,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
 //                .loginPage("/login")
 //                .failureUrl("/login")
-                .successHandler(successHandler) // autowired or defined below
+                .successHandler(successHandler)// autowired or defined below
+//                .failureHandler()
                 .and()
                 .logout()
                 .permitAll()

@@ -20,7 +20,7 @@ import java.io.IOException;
  * Created by Michael Brennan on 9/8/15.
  */
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api/")
 public class Hello {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
