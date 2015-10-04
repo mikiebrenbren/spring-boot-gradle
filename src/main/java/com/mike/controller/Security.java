@@ -1,5 +1,7 @@
 package com.mike.controller;
 
+import com.mike.utils.Constants;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,10 +22,5 @@ public class Security {
     public void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.logout();
         response.sendRedirect("login");
-    }
-
-    @RequestMapping("login")
-    public void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect(request.getContextPath());
     }
 }
