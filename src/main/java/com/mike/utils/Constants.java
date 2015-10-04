@@ -1,7 +1,7 @@
 package com.mike.utils;
 
 /**
- * Created by michaelbrennan on 10/3/15.
+ * Created by Michael Brennan on 10/3/15.
  */
 public class Constants {
 

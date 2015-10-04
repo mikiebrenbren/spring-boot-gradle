@@ -47,6 +47,7 @@ dependencies {
     // tag::actuator[]
     compile('org.springframework.boot:spring-boot-starter-actuator:1.2.6.RELEASE')
     // end::actuator[]
+//    compile 'org.springframework.boot:spring-boot-starter-security:1.2.6.RELEASE' //todo figure out spring boot config
 
     //DATABASE
     compile 'org.springframework.boot:spring-boot-starter-data-jpa:1.2.6.RELEASE'
