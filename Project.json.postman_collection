@@ -1,0 +1,123 @@
+{
+	"id": "8ed07395-8f50-942c-da55-3749f36f02e7",
+	"name": "GradleBuild",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"id": "6d2cf9d7-426a-ca48-ad35-226c820f05ea",
+			"name": "local",
+			"description": "",
+			"order": [
+				"29b86bec-f2e2-46cc-767a-57e6c96c2c96",
+				"ae4e45eb-7cee-d580-df5e-e9202933e60d",
+				"f6dabe19-c8a7-160e-8538-9421d0d4dbd8",
+				"e7378c12-5b58-7659-495f-a161f1dd875b"
+			],
+			"owner": 0
+		}
+	],
+	"timestamp": 1444010135165,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "29b86bec-f2e2-46cc-767a-57e6c96c2c96",
+			"headers": "",
+			"url": "localhost:8080/api/hello",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "8ed07395-8f50-942c-da55-3749f36f02e7",
+			"data": [],
+			"dataMode": "params",
+			"name": "/hello",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1444010188142,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "6d2cf9d7-426a-ca48-ad35-226c820f05ea"
+		},
+		{
+			"id": "ae4e45eb-7cee-d580-df5e-e9202933e60d",
+			"headers": "",
+			"url": "http://localhost:8080/api/login",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "8ed07395-8f50-942c-da55-3749f36f02e7",
+			"data": [
+				{
+					"key": "user",
+					"value": "user",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "userPass",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "/login",
+			"description": "Generated from a curl request: \\ncurl -i -X POST -d user=user -d password=userPass http://localhost:8080/api/login",
+			"descriptionFormat": "html",
+			"time": 1444011363796,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "6d2cf9d7-426a-ca48-ad35-226c820f05ea"
+		},
+		{
+			"id": "e7378c12-5b58-7659-495f-a161f1dd875b",
+			"headers": "",
+			"url": "localhost:8080/api/hello/Mike",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "8ed07395-8f50-942c-da55-3749f36f02e7",
+			"data": [],
+			"dataMode": "params",
+			"name": "/hello/{word}",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1444011554820,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "6d2cf9d7-426a-ca48-ad35-226c820f05ea"
+		},
+		{
+			"id": "f6dabe19-c8a7-160e-8538-9421d0d4dbd8",
+			"headers": "",
+			"url": "http://localhost:8080/logout",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "8ed07395-8f50-942c-da55-3749f36f02e7",
+			"data": [],
+			"dataMode": "params",
+			"name": "/logout",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1444011504518,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "6d2cf9d7-426a-ca48-ad35-226c820f05ea"
+		}
+	]
+}

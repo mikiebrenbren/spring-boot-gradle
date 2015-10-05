@@ -6,14 +6,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
 @SpringBootApplication
-public class Application extends AbstractSecurityWebApplicationInitializer {
+public class Application {
+//        extends AbstractSecurityWebApplicationInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
-    public Application() {
-        super(SecurityConfig.class);
-    }
+//    public Application() {
+//        super(SecurityConfig.class);
+//    }
 
 }
