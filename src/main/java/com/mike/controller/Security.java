@@ -10,13 +10,13 @@ import java.io.IOException;
 /**
  * Created by Michael Brennan on 10/3/15.
  */
-@RestController
-@RequestMapping("/api/")
-public class Security {
-
-    @RequestMapping("logout")
-    public void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.logout();
-        response.sendRedirect("login");
-    }
-}
+//@RestController
+//@RequestMapping("/api/")
+//public class Security {
+//
+//    @RequestMapping("logout")
+//    public void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        request.logout();
+//        response.sendRedirect("login");
+//    }
+//}
