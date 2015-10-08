@@ -5,6 +5,7 @@ import org.springframework.security.web.authentication.SimpleUrlAuthenticationSu
 import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 import org.springframework.security.web.savedrequest.RequestCache;
 import org.springframework.security.web.savedrequest.SavedRequest;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.ServletException;
@@ -15,6 +16,7 @@ import java.io.IOException;
 /**
  * Created by Michael Brennan on 10/4/15.
  */
+@Component
 public class MySavedRequestAwareAuthenticationSuccessHandler
         extends SimpleUrlAuthenticationSuccessHandler {
 

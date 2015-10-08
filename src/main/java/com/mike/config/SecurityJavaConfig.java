@@ -4,7 +4,6 @@ import com.mike.controller.RestAuthenticationEntryPoint;
 import com.mike.handler.CustomLogoutHandler;
 import com.mike.handler.MySavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -61,17 +60,4 @@ public class SecurityJavaConfig extends WebSecurityConfigurerAdapter {
                 .logoutRequestMatcher(new AntPathRequestMatcher("/api/logout"));
     }
 
-    @Bean
-    public MySavedRequestAwareAuthenticationSuccessHandler mySuccessHandler(){
-        return new MySavedRequestAwareAuthenticationSuccessHandler();
-    }
-    @Bean
-    public SimpleUrlAuthenticationFailureHandler myFailureHandler(){
-        return new SimpleUrlAuthenticationFailureHandler();
-    }
-
-    @Bean
-    public CustomLogoutHandler customLogoutHandler() {
-        return new CustomLogoutHandler();
-    }
 }
