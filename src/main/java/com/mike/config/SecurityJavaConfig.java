@@ -1,6 +1,7 @@
 package com.mike.config;
 
 import com.mike.controller.RestAuthenticationEntryPoint;
+import com.mike.handler.CustomLogoutHandler;
 import com.mike.handler.MySavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -11,6 +12,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 /**
  * Created by michaelbrennan on 10/4/15.
@@ -25,6 +27,9 @@ public class SecurityJavaConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private MySavedRequestAwareAuthenticationSuccessHandler authenticationSuccessHandler;
+
+    @Autowired
+    private CustomLogoutHandler customLogoutHandler;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -50,7 +55,10 @@ public class SecurityJavaConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(authenticationSuccessHandler)
                 .failureHandler(new SimpleUrlAuthenticationFailureHandler())
                 .and()
-                .logout();
+                .logout()
+                .deleteCookies("JSESSIONID")
+                .logoutSuccessHandler(customLogoutHandler)
+                .logoutRequestMatcher(new AntPathRequestMatcher("/api/logout"));
     }
 
     @Bean
@@ -60,5 +68,10 @@ public class SecurityJavaConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public SimpleUrlAuthenticationFailureHandler myFailureHandler(){
         return new SimpleUrlAuthenticationFailureHandler();
+    }
+
+    @Bean
+    public CustomLogoutHandler customLogoutHandler() {
+        return new CustomLogoutHandler();
     }
 }
